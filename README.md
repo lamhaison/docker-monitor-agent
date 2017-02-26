@@ -26,3 +26,7 @@ docker-compose -f docker-compose.yml up -d
 ```
 
 * graph on grafana
+** CPU Graph
+![alt tag](https://github.com/lamhaison/docker-agent-for-graphite/blob/master/Screenshot_20170226_161901.png)
+** Memory Graph
+![alt tag](https://github.com/lamhaison/docker-agent-for-graphite/blob/master/Screenshot_20170226_162239.png)
