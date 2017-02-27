@@ -27,6 +27,6 @@ docker-compose -f docker-compose.yml up -d
 
 
 
-* Graph on grafana
+# Graph on grafana
 ![alt tag](https://github.com/lamhaison/docker-agent-for-graphite/blob/master/Screenshot_20170226_161901.png)
 ![alt tag](https://github.com/lamhaison/docker-agent-for-graphite/blob/master/Screenshot_20170226_162239.png)
