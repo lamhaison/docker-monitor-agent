@@ -33,4 +33,4 @@ docker-compose -f docker-compose.yml up -d
 ![alt tag](https://github.com/lamhaison/docker-monitor-agent/blob/master/Screenshot_20170226_162239.png)
 
 
-# How to create graphite server, please head of https://github.com/nickstenning/docker-graphite
+# How to create graphite server, please head of [how to setup graphite server](https://github.com/nickstenning/docker-graphite)
