@@ -29,8 +29,9 @@ docker-compose -f docker-compose.yml up -d
 
 
 # Graph on grafana
-![alt tag](https://github.com/lamhaison/docker-monitor-agent/blob/master/Screenshot_20170226_161901.png)
-![alt tag](https://github.com/lamhaison/docker-monitor-agent/blob/master/Screenshot_20170226_162239.png)
+![alt tag](https://github.com/lamhaison/docker-monitor-agent/blob/master/Screen%20Shot%202017-09-17%20at%201.25.47%20AM.png)
+![alt tag](https://github.com/lamhaison/docker-monitor-agent/blob/master/Screen%20Shot%202017-09-17%20at%201.27.24%20AM.png)
+
 
 
 # How to create graphite server, please head of [how to setup graphite server](https://github.com/nickstenning/docker-graphite)
