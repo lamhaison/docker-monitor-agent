@@ -34,4 +34,50 @@ docker-compose -f docker-compose.yml up -d
 
 
 
-# How to create graphite server, please head of [how to setup graphite server](https://github.com/nickstenning/docker-graphite)
+* Create docker-compose-graphite.yml to create graphite system
+```
+# docker-compose -f docker-compose-graphite.yml up -d
+# Graphite, carbon, carbon-relay, grafana
+version: '2'
+services:
+  carbon-relay:
+    image: banno/carbon-relay
+    volumes:
+      - /docker/whisper:/opt/graphite/storage/whisper
+    ports:
+      - "2003:2003"
+      - "2004:2004"
+      - "7002:7002"
+    container_name: "carbon-relay"
+    depends_on:
+      - carbon-cache_1
+      - carbon-cache_2
+    environment:
+      - RELAY_METHOD=consistent-hashing
+      - DESTINATIONS=carbon-cache_1:2004, carbon-cache_2:2004
+  carbon-cache_1:
+    image: banno/carbon-cache
+    volumes:
+      - /docker/whisper:/opt/graphite/storage/whisper
+    container_name: "carbon-cache_1"
+
+  carbon-cache_2:
+    image: banno/carbon-cache
+    volumes:
+      - /docker/whisper:/opt/graphite/storage/whisper
+    container_name: "carbon-cache_2"
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    container_name: "grafana"
+    depends_on:
+     - graphite
+  graphite:
+    image: banno/graphite-web
+    volumes:
+      - /docker/whisper:/opt/graphite/storage/whisper
+    ports:
+      - "80:80"
+    container_name: "graphite"
+```
